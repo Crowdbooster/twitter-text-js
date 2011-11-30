@@ -1,3 +1,196 @@
+/*!
+ * twitter-text-js 1.4.5
+ *
+ * Copyright 2011 Twitter, Inc.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this work except in compliance with the License.
+ * You may obtain a copy of the License below, or at:
+ * 
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * 
+ *                              Apache License
+ *                        Version 2.0, January 2004
+ *                     http://www.apache.org/licenses/
+ * 
+ * TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+ * 
+ * 1. Definitions.
+ * 
+ *   "License" shall mean the terms and conditions for use, reproduction,
+ *   and distribution as defined by Sections 1 through 9 of this document.
+ * 
+ *   "Licensor" shall mean the copyright owner or entity authorized by
+ *   the copyright owner that is granting the License.
+ * 
+ *   "Legal Entity" shall mean the union of the acting entity and all
+ *   other entities that control, are controlled by, or are under common
+ *   control with that entity. For the purposes of this definition,
+ *   "control" means (i) the power, direct or indirect, to cause the
+ *   direction or management of such entity, whether by contract or
+ *   otherwise, or (ii) ownership of fifty percent (50%) or more of the
+ *   outstanding shares, or (iii) beneficial ownership of such entity.
+ * 
+ *   "You" (or "Your") shall mean an individual or Legal Entity
+ *   exercising permissions granted by this License.
+ * 
+ *   "Source" form shall mean the preferred form for making modifications,
+ *   including but not limited to software source code, documentation
+ *   source, and configuration files.
+ * 
+ *   "Object" form shall mean any form resulting from mechanical
+ *   transformation or translation of a Source form, including but
+ *   not limited to compiled object code, generated documentation,
+ *   and conversions to other media types.
+ * 
+ *   "Work" shall mean the work of authorship, whether in Source or
+ *   Object form, made available under the License, as indicated by a
+ *   copyright notice that is included in or attached to the work
+ *   (an example is provided in the Appendix below).
+ * 
+ *   "Derivative Works" shall mean any work, whether in Source or Object
+ *   form, that is based on (or derived from) the Work and for which the
+ *   editorial revisions, annotations, elaborations, or other modifications
+ *   represent, as a whole, an original work of authorship. For the purposes
+ *   of this License, Derivative Works shall not include works that remain
+ *   separable from, or merely link (or bind by name) to the interfaces of,
+ *   the Work and Derivative Works thereof.
+ * 
+ *   "Contribution" shall mean any work of authorship, including
+ *   the original version of the Work and any modifications or additions
+ *   to that Work or Derivative Works thereof, that is intentionally
+ *   submitted to Licensor for inclusion in the Work by the copyright owner
+ *   or by an individual or Legal Entity authorized to submit on behalf of
+ *   the copyright owner. For the purposes of this definition, "submitted"
+ *   means any form of electronic, verbal, or written communication sent
+ *   to the Licensor or its representatives, including but not limited to
+ *   communication on electronic mailing lists, source code control systems,
+ *   and issue tracking systems that are managed by, or on behalf of, the
+ *   Licensor for the purpose of discussing and improving the Work, but
+ *   excluding communication that is conspicuously marked or otherwise
+ *   designated in writing by the copyright owner as "Not a Contribution."
+ * 
+ *   "Contributor" shall mean Licensor and any individual or Legal Entity
+ *   on behalf of whom a Contribution has been received by Licensor and
+ *   subsequently incorporated within the Work.
+ * 
+ * 2. Grant of Copyright License. Subject to the terms and conditions of
+ *   this License, each Contributor hereby grants to You a perpetual,
+ *   worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+ *   copyright license to reproduce, prepare Derivative Works of,
+ *   publicly display, publicly perform, sublicense, and distribute the
+ *   Work and such Derivative Works in Source or Object form.
+ * 
+ * 3. Grant of Patent License. Subject to the terms and conditions of
+ *   this License, each Contributor hereby grants to You a perpetual,
+ *   worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+ *   (except as stated in this section) patent license to make, have made,
+ *   use, offer to sell, sell, import, and otherwise transfer the Work,
+ *   where such license applies only to those patent claims licensable
+ *   by such Contributor that are necessarily infringed by their
+ *   Contribution(s) alone or by combination of their Contribution(s)
+ *   with the Work to which such Contribution(s) was submitted. If You
+ *   institute patent litigation against any entity (including a
+ *   cross-claim or counterclaim in a lawsuit) alleging that the Work
+ *   or a Contribution incorporated within the Work constitutes direct
+ *   or contributory patent infringement, then any patent licenses
+ *   granted to You under this License for that Work shall terminate
+ *   as of the date such litigation is filed.
+ * 
+ * 4. Redistribution. You may reproduce and distribute copies of the
+ *   Work or Derivative Works thereof in any medium, with or without
+ *   modifications, and in Source or Object form, provided that You
+ *   meet the following conditions:
+ * 
+ *   (a) You must give any other recipients of the Work or
+ *       Derivative Works a copy of this License; and
+ * 
+ *   (b) You must cause any modified files to carry prominent notices
+ *       stating that You changed the files; and
+ * 
+ *   (c) You must retain, in the Source form of any Derivative Works
+ *       that You distribute, all copyright, patent, trademark, and
+ *       attribution notices from the Source form of the Work,
+ *       excluding those notices that do not pertain to any part of
+ *       the Derivative Works; and
+ * 
+ *   (d) If the Work includes a "NOTICE" text file as part of its
+ *       distribution, then any Derivative Works that You distribute must
+ *       include a readable copy of the attribution notices contained
+ *       within such NOTICE file, excluding those notices that do not
+ *       pertain to any part of the Derivative Works, in at least one
+ *       of the following places: within a NOTICE text file distributed
+ *       as part of the Derivative Works; within the Source form or
+ *       documentation, if provided along with the Derivative Works; or,
+ *       within a display generated by the Derivative Works, if and
+ *       wherever such third-party notices normally appear. The contents
+ *       of the NOTICE file are for informational purposes only and
+ *       do not modify the License. You may add Your own attribution
+ *       notices within Derivative Works that You distribute, alongside
+ *       or as an addendum to the NOTICE text from the Work, provided
+ *       that such additional attribution notices cannot be construed
+ *       as modifying the License.
+ * 
+ *   You may add Your own copyright statement to Your modifications and
+ *   may provide additional or different license terms and conditions
+ *   for use, reproduction, or distribution of Your modifications, or
+ *   for any such Derivative Works as a whole, provided Your use,
+ *   reproduction, and distribution of the Work otherwise complies with
+ *   the conditions stated in this License.
+ * 
+ * 5. Submission of Contributions. Unless You explicitly state otherwise,
+ *   any Contribution intentionally submitted for inclusion in the Work
+ *   by You to the Licensor shall be under the terms and conditions of
+ *   this License, without any additional terms or conditions.
+ *   Notwithstanding the above, nothing herein shall supersede or modify
+ *   the terms of any separate license agreement you may have executed
+ *   with Licensor regarding such Contributions.
+ * 
+ * 6. Trademarks. This License does not grant permission to use the trade
+ *   names, trademarks, service marks, or product names of the Licensor,
+ *   except as required for reasonable and customary use in describing the
+ *   origin of the Work and reproducing the content of the NOTICE file.
+ * 
+ * 7. Disclaimer of Warranty. Unless required by applicable law or
+ *   agreed to in writing, Licensor provides the Work (and each
+ *   Contributor provides its Contributions) on an "AS IS" BASIS,
+ *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+ *   implied, including, without limitation, any warranties or conditions
+ *   of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A
+ *   PARTICULAR PURPOSE. You are solely responsible for determining the
+ *   appropriateness of using or redistributing the Work and assume any
+ *   risks associated with Your exercise of permissions under this License.
+ * 
+ * 8. Limitation of Liability. In no event and under no legal theory,
+ *   whether in tort (including negligence), contract, or otherwise,
+ *   unless required by applicable law (such as deliberate and grossly
+ *   negligent acts) or agreed to in writing, shall any Contributor be
+ *   liable to You for damages, including any direct, indirect, special,
+ *   incidental, or consequential damages of any character arising as a
+ *   result of this License or out of the use or inability to use the
+ *   Work (including but not limited to damages for loss of goodwill,
+ *   work stoppage, computer failure or malfunction, or any and all
+ *   other commercial damages or losses), even if such Contributor
+ *   has been advised of the possibility of such damages.
+ * 
+ * 9. Accepting Warranty or Additional Liability. While redistributing
+ *   the Work or Derivative Works thereof, You may choose to offer,
+ *   and charge a fee for, acceptance of support, warranty, indemnity,
+ *   or other liability obligations and/or rights consistent with this
+ *   License. However, in accepting such obligations, You may act only
+ *   on Your own behalf and on Your sole responsibility, not on behalf
+ *   of any other Contributor, and only if You agree to indemnify,
+ *   defend, and hold each Contributor harmless for any liability
+ *   incurred by, or claims asserted against, such Contributor by reason
+ *   of your accepting any such warranty or additional liability.
+ */
+
 if (!window.twttr) {
   window.twttr = {};
 }
@@ -11,7 +204,7 @@ if (!window.twttr) {
     '>': '&gt;',
     '<': '&lt;',
     '"': '&quot;',
-    "'": '&#39;'
+    "'": '&#32;'
   };
 
   // HTML escaping
@@ -55,11 +248,11 @@ if (!window.twttr) {
   }
 
   function addCharsToCharClass(charClass, start, end) {
-    var s = String.fromCharCode(start);
-    if (end !== start) {
-      s += "-" + String.fromCharCode(end);
+    if (end == start) {
+      charClass.push(String.fromCharCode(start));
+    } else {
+      charClass.push(String.fromCharCode(start) + "-" + String.fromCharCode(end));
     }
-    charClass.push(s);
     return charClass;
   }
 
@@ -82,46 +275,33 @@ if (!window.twttr) {
   addCharsToCharClass(UNICODE_SPACES, 0x009, 0x00D); // White_Space # Cc   [5] <control-0009>..<control-000D>
   addCharsToCharClass(UNICODE_SPACES, 0x2000, 0x200A); // White_Space # Zs  [11] EN QUAD..HAIR SPACE
 
-  var INVALID_CHARS = [
-    fromCode(0xFFFE),
-    fromCode(0xFEFF), // BOM
-    fromCode(0xFFFF) // Special
-  ];
-  addCharsToCharClass(INVALID_CHARS, 0x202A, 0x202E); // Directional change
-
   twttr.txt.regexen.spaces_group = regexSupplant(UNICODE_SPACES.join(""));
   twttr.txt.regexen.spaces = regexSupplant("[" + UNICODE_SPACES.join("") + "]");
-  twttr.txt.regexen.invalid_chars_group = regexSupplant(INVALID_CHARS.join(""));
   twttr.txt.regexen.punct = /\!'#%&'\(\)*\+,\\\-\.\/:;<=>\?@\[\]\^_{|}~/;
   twttr.txt.regexen.atSigns = /[@＠]/;
-  twttr.txt.regexen.extractMentions = regexSupplant(/(^|[^a-zA-Z0-9_])(#{atSigns})([a-zA-Z0-9_]{1,20})/g);
+  twttr.txt.regexen.extractMentions = regexSupplant(/(^|[^a-zA-Z0-9_])(#{atSigns})([a-zA-Z0-9_]{1,20})(?=(.|$))/g);
   twttr.txt.regexen.extractReply = regexSupplant(/^(?:#{spaces})*#{atSigns}([a-zA-Z0-9_]{1,20})/);
   twttr.txt.regexen.listName = /[a-zA-Z][a-zA-Z0-9_\-\u0080-\u00ff]{0,24}/;
-  twttr.txt.regexen.extractMentionsOrLists = regexSupplant(/(^|[^a-zA-Z0-9_])(#{atSigns})([a-zA-Z0-9_]{1,20})(\/[a-zA-Z][a-zA-Z0-9_\-]{0,24})?/g);
 
   var nonLatinHashtagChars = [];
   // Cyrillic
   addCharsToCharClass(nonLatinHashtagChars, 0x0400, 0x04ff); // Cyrillic
   addCharsToCharClass(nonLatinHashtagChars, 0x0500, 0x0527); // Cyrillic Supplement
-  addCharsToCharClass(nonLatinHashtagChars, 0x2de0, 0x2dff); // Cyrillic Extended A
-  addCharsToCharClass(nonLatinHashtagChars, 0xa640, 0xa69f); // Cyrillic Extended B
   // Hangul (Korean)
   addCharsToCharClass(nonLatinHashtagChars, 0x1100, 0x11ff); // Hangul Jamo
   addCharsToCharClass(nonLatinHashtagChars, 0x3130, 0x3185); // Hangul Compatibility Jamo
   addCharsToCharClass(nonLatinHashtagChars, 0xA960, 0xA97F); // Hangul Jamo Extended-A
   addCharsToCharClass(nonLatinHashtagChars, 0xAC00, 0xD7AF); // Hangul Syllables
   addCharsToCharClass(nonLatinHashtagChars, 0xD7B0, 0xD7FF); // Hangul Jamo Extended-B
-  addCharsToCharClass(nonLatinHashtagChars, 0xFFA1, 0xFFDC); // half-width Hangul
   // Japanese and Chinese
   addCharsToCharClass(nonLatinHashtagChars, 0x30A1, 0x30FA); // Katakana (full-width)
-  addCharsToCharClass(nonLatinHashtagChars, 0x30FC, 0x30FE); // Katakana Chouon and iteration marks (full-width)
+  addCharsToCharClass(nonLatinHashtagChars, 0x30FC, 0x30FC); // Katakana Chouon (full-width)
   addCharsToCharClass(nonLatinHashtagChars, 0xFF66, 0xFF9F); // Katakana (half-width)
   addCharsToCharClass(nonLatinHashtagChars, 0xFF70, 0xFF70); // Katakana Chouon (half-width)
   addCharsToCharClass(nonLatinHashtagChars, 0xFF10, 0xFF19); // \
   addCharsToCharClass(nonLatinHashtagChars, 0xFF21, 0xFF3A); //  - Latin (full-width)
   addCharsToCharClass(nonLatinHashtagChars, 0xFF41, 0xFF5A); // /
   addCharsToCharClass(nonLatinHashtagChars, 0x3041, 0x3096); // Hiragana
-  addCharsToCharClass(nonLatinHashtagChars, 0x3099, 0x309E); // Hiragana voicing and iteration mark
   addCharsToCharClass(nonLatinHashtagChars, 0x3400, 0x4DBF); // Kanji (CJK Extension A)
   addCharsToCharClass(nonLatinHashtagChars, 0x4E00, 0x9FFF); // Kanji (Unified)
   // -- Disabled as it breaks the Regex.
@@ -129,73 +309,62 @@ if (!window.twttr) {
   addCharsToCharClass(nonLatinHashtagChars, 0x2A700, 0x2B73F); // Kanji (CJK Extension C)
   addCharsToCharClass(nonLatinHashtagChars, 0x2B740, 0x2B81F); // Kanji (CJK Extension D)
   addCharsToCharClass(nonLatinHashtagChars, 0x2F800, 0x2FA1F); // Kanji (CJK supplement)
-  addCharsToCharClass(nonLatinHashtagChars, 0x3005, 0x3005); // Kanji iteration mark
-  addCharsToCharClass(nonLatinHashtagChars, 0x303B, 0x303B); // Han iteration mark
+  addCharsToCharClass(nonLatinHashtagChars, 0x3005, 0x3005); // Kanji (CJK iteration mark)
 
   twttr.txt.regexen.nonLatinHashtagChars = regexSupplant(nonLatinHashtagChars.join(""));
   // Latin accented characters (subtracted 0xD7 from the range, it's a confusable multiplication sign. Looks like "x")
-  twttr.txt.regexen.latinAccentChars = regexSupplant("ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþş\\303\\277");
+  twttr.txt.regexen.latinAccentChars = regexSupplant("ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþ\\303\\277");
+  twttr.txt.regexen.latenAccents = regexSupplant(/[#{latinAccentChars}]+/);
 
   twttr.txt.regexen.endScreenNameMatch = regexSupplant(/^(?:#{atSigns}|[#{latinAccentChars}]|:\/\/)/);
 
   // A hashtag must contain characters, numbers and underscores, but not all numbers.
+  twttr.txt.regexen.hashtagBoundary = regexSupplant(/(?:^|$|#{spaces}|「|」|。|、|\.|!|！|\?|？|,)/);
   twttr.txt.regexen.hashtagAlpha = regexSupplant(/[a-z_#{latinAccentChars}#{nonLatinHashtagChars}]/i);
   twttr.txt.regexen.hashtagAlphaNumeric = regexSupplant(/[a-z0-9_#{latinAccentChars}#{nonLatinHashtagChars}]/i);
-  twttr.txt.regexen.endHashtagMatch = /^(?:[#＃]|:\/\/)/;
-  twttr.txt.regexen.hashtagBoundary = regexSupplant(/(?:^|$|[^&\/a-z0-9_#{latinAccentChars}#{nonLatinHashtagChars}])/);
   twttr.txt.regexen.autoLinkHashtags = regexSupplant(/(#{hashtagBoundary})(#|＃)(#{hashtagAlphaNumeric}*#{hashtagAlpha}#{hashtagAlphaNumeric}*)/gi);
   twttr.txt.regexen.autoLinkUsernamesOrLists = /(^|[^a-zA-Z0-9_]|RT:?)([@＠]+)([a-zA-Z0-9_]{1,20})(\/[a-zA-Z][a-zA-Z0-9_\-]{0,24})?/g;
   twttr.txt.regexen.autoLinkEmoticon = /(8\-\#|8\-E|\+\-\(|\`\@|\`O|\&lt;\|:~\(|\}:o\{|:\-\[|\&gt;o\&lt;|X\-\/|\[:-\]\-I\-|\/\/\/\/Ö\\\\\\\\|\(\|:\|\/\)|∑:\*\)|\( \| \))/g;
 
   // URL related hash regex collection
-  twttr.txt.regexen.validPrecedingChars = regexSupplant(/(?:[^-\/"'!=A-Za-z0-9_@＠#＃\.#{invalid_chars_group}]|^)/);
+  twttr.txt.regexen.invalidDomainChars = stringSupplant("\u00A0#{punct}#{spaces_group}", twttr.txt.regexen);
+  twttr.txt.regexen.validPrecedingChars = regexSupplant(/(?:[^-\/"':!=A-Za-z0-9_@＠]|^|\:)/);
 
-  twttr.txt.regexen.invalidDomainChars = stringSupplant("#{punct}#{spaces_group}#{invalid_chars_group}", twttr.txt.regexen);
-  twttr.txt.regexen.validDomainChars = regexSupplant(/[^#{invalidDomainChars}]/);
-  twttr.txt.regexen.validSubdomain = regexSupplant(/(?:(?:#{validDomainChars}(?:[_-]|#{validDomainChars})*)?#{validDomainChars}\.)/);
-  twttr.txt.regexen.validDomainName = regexSupplant(/(?:(?:#{validDomainChars}(?:-|#{validDomainChars})*)?#{validDomainChars}\.)/);
-  twttr.txt.regexen.validGTLD = regexSupplant(/(?:(?:aero|asia|biz|cat|com|coop|edu|gov|info|int|jobs|mil|mobi|museum|name|net|org|pro|tel|travel)(?=[^a-zA-Z]|$))/);
-  twttr.txt.regexen.validCCTLD = regexSupplant(/(?:(?:ac|ad|ae|af|ag|ai|al|am|an|ao|aq|ar|as|at|au|aw|ax|az|ba|bb|bd|be|bf|bg|bh|bi|bj|bm|bn|bo|br|bs|bt|bv|bw|by|bz|ca|cc|cd|cf|cg|ch|ci|ck|cl|cm|cn|co|cr|cs|cu|cv|cx|cy|cz|dd|de|dj|dk|dm|do|dz|ec|ee|eg|eh|er|es|et|eu|fi|fj|fk|fm|fo|fr|ga|gb|gd|ge|gf|gg|gh|gi|gl|gm|gn|gp|gq|gr|gs|gt|gu|gw|gy|hk|hm|hn|hr|ht|hu|id|ie|il|im|in|io|iq|ir|is|it|je|jm|jo|jp|ke|kg|kh|ki|km|kn|kp|kr|kw|ky|kz|la|lb|lc|li|lk|lr|ls|lt|lu|lv|ly|ma|mc|md|me|mg|mh|mk|ml|mm|mn|mo|mp|mq|mr|ms|mt|mu|mv|mw|mx|my|mz|na|nc|ne|nf|ng|ni|nl|no|np|nr|nu|nz|om|pa|pe|pf|pg|ph|pk|pl|pm|pn|pr|ps|pt|pw|py|qa|re|ro|rs|ru|rw|sa|sb|sc|sd|se|sg|sh|si|sj|sk|sl|sm|sn|so|sr|ss|st|su|sv|sy|sz|tc|td|tf|tg|th|tj|tk|tl|tm|tn|to|tp|tr|tt|tv|tw|tz|ua|ug|uk|us|uy|uz|va|vc|ve|vg|vi|vn|vu|wf|ws|ye|yt|za|zm|zw)(?=[^a-zA-Z]|$))/);
-  twttr.txt.regexen.validPunycode = regexSupplant(/(?:xn--[0-9a-z]+)/);
-  twttr.txt.regexen.validDomain = regexSupplant(/(?:#{validSubdomain}*#{validDomainName}(?:#{validGTLD}|#{validCCTLD}|#{validPunycode}))/);
-  twttr.txt.regexen.validAsciiDomain = regexSupplant(/(?:(?:[a-z0-9#{latinAccentChars}]+)\.)+(?:#{validGTLD}|#{validCCTLD}|#{validPunycode})/gi);
-  twttr.txt.regexen.invalidShortDomain = regexSupplant(/^#{validDomainName}#{validCCTLD}$/);
+  twttr.txt.regexen.validSubdomain = regexSupplant(/(?:[^#{invalidDomainChars}](?:[_-]|[^#{invalidDomainChars}])*)?[^#{invalidDomainChars}]\./);
+  twttr.txt.regexen.validDomainName = regexSupplant(/(?:[^#{invalidDomainChars}](?:[-]|[^#{invalidDomainChars}])*)?[^#{invalidDomainChars}]/);
+  twttr.txt.regexen.validDomain = regexSupplant(/(#{validSubdomain})*#{validDomainName}\.(?:xn--[a-z0-9]{2,}|[a-z]{2,})(?::[0-9]+)?/i);
 
-  twttr.txt.regexen.validPortNumber = regexSupplant(/[0-9]+/);
-
-  twttr.txt.regexen.validGeneralUrlPathChars = regexSupplant(/[a-z0-9!\*';:=\+,\.\$\/%#\[\]\-_~|&#{latinAccentChars}]/i);
+  twttr.txt.regexen.validGeneralUrlPathChars = /[a-z0-9!\*';:=\+\$\/%#\[\]\-_,~|\.]/i;
   // Allow URL paths to contain balanced parens
   //  1. Used in Wikipedia URLs like /Primer_(film)
   //  2. Used in IIS sessions like /S(dfd346)/
-  twttr.txt.regexen.validUrlBalancedParens = regexSupplant(/\(#{validGeneralUrlPathChars}+\)/i);
+  twttr.txt.regexen.wikipediaDisambiguation = regexSupplant(/(?:\(#{validGeneralUrlPathChars}+\))/i);
+  // Allow @ in a url, but only in the middle. Catch things like http://example.com/@user
+  twttr.txt.regexen.validUrlPathChars = regexSupplant(/(?:#{wikipediaDisambiguation}|@#{validGeneralUrlPathChars}+\/|[\.,]?#{validGeneralUrlPathChars})/i);
+
   // Valid end-of-path chracters (so /foo. does not gobble the period).
   // 1. Allow =&# for empty URL parameters and other URL-join artifacts
-  twttr.txt.regexen.validUrlPathEndingChars = regexSupplant(/[\+\-a-z0-9=_#\/#{latinAccentChars}]|(?:#{validUrlBalancedParens})/i);
-  // Allow @ in a url, but only in the middle. Catch things like http://example.com/@user/
-  twttr.txt.regexen.validUrlPath = regexSupplant('(?:' +
-    '(?:' +
-      '#{validGeneralUrlPathChars}*' +
-        '(?:#{validUrlBalancedParens}#{validGeneralUrlPathChars}*)*' +
-        '#{validUrlPathEndingChars}'+
-      ')|(?:@#{validGeneralUrlPathChars}+\/)'+
-    ')', 'i');
-
-  twttr.txt.regexen.validUrlQueryChars = /[a-z0-9!?\*'\(\);:&=\+\$\/%#\[\]\-_\.,~|]/i;
+  twttr.txt.regexen.validUrlPathEndingChars = regexSupplant(/(?:[\+\-a-z0-9=_#\/]|#{wikipediaDisambiguation})/i);
+  twttr.txt.regexen.validUrlQueryChars = /[a-z0-9!\*'\(\);:&=\+\$\/%#\[\]\-_\.,~|]/i;
   twttr.txt.regexen.validUrlQueryEndingChars = /[a-z0-9_&=#\/]/i;
   twttr.txt.regexen.extractUrl = regexSupplant(
     '('                                                            + // $1 total match
       '(#{validPrecedingChars})'                                   + // $2 Preceeding chracter
       '('                                                          + // $3 URL
-        '(https?:\\/\\/)?'                                         + // $4 Protocol (optional)
-        '(#{validDomain})'                                         + // $5 Domain(s)
-        '(?::(#{validPortNumber}))?'                               + // $6 Port number (optional)
-        '(\\/#{validUrlPath}*)?'                                   + // $7 URL Path
-        '(\\?#{validUrlQueryChars}*#{validUrlQueryEndingChars})?'  + // $8 Query String
+        '(https?:\\/\\/)'                                          + // $4 Protocol
+        '(#{validDomain})'                                         + // $5 Domain(s) and optional post number
+        '(\\/'                                                     + // $6 URL Path
+           '(?:'                                                   +
+             '#{validUrlPathChars}+#{validUrlPathEndingChars}|'    +
+             '#{validUrlPathChars}+#{validUrlPathEndingChars}?|'   +
+             '#{validUrlPathEndingChars}'                          +
+           ')?'                                                    +
+        ')?'                                                       +
+        '(\\?#{validUrlQueryChars}*#{validUrlQueryEndingChars})?'  + // $7 Query String
       ')'                                                          +
     ')'
-  , 'gi');
+  , "gi");
 
-  twttr.txt.regexen.validTcoUrl = /^https?:\/\/t\.co\/[a-z0-9]+/i;
 
   // These URL validation pattern strings are based on the ABNF from RFC 3986
   twttr.txt.regexen.validateUrlUnreserved = /[a-z0-9\-._~]/i;
@@ -205,7 +374,7 @@ if (!window.twttr) {
     '#{validateUrlUnreserved}|' +
     '#{validateUrlPctEncoded}|' +
     '#{validateUrlSubDelims}|' +
-    '[:|@]' +
+    ':|@' +
   ')', 'i');
 
   twttr.txt.regexen.validateUrlScheme = /(?:[a-z][a-z0-9+\-.]*)/i;
@@ -272,9 +441,11 @@ if (!window.twttr) {
   twttr.txt.regexen.validateUrlUnencoded = regexSupplant(
     '^'                               + // Full URL
     '(?:'                             +
-      '([^:/?#]+):\\/\\/'             + // $1 Scheme
-    ')?'                              +
-    '([^/?#]*)'                       + // $2 Authority
+      '([^:/?#]+):'                   + // $1 Scheme
+    ')'                               +
+    '(?://'                           +
+      '([^/?#]*)'                     + // $2 Authority
+    ')'                               +
     '([^?#]*)'                        + // $3 Path
     '(?:'                             +
       '\\?([^#]*)'                    + // $4 Query
@@ -316,16 +487,6 @@ if (!window.twttr) {
       options),
     options);
   };
-
-  twttr.txt.autoLinkWebIntents = function(text, options) {
-    options = clone(options || {});
-    options.usernameUrlBase = "https://twitter.com/intent/user?screen_name=";
-    return twttr.txt.autoLinkUsernamesOrLists(
-      twttr.txt.autoLinkUrlsCustom(
-        twttr.txt.autoLinkHashtags(text, options),
-      options),
-    options);
-  }
 
 
   twttr.txt.autoLinkUsernamesOrLists = function(text, options) {
@@ -376,7 +537,7 @@ if (!window.twttr) {
             // the link is a list
             var list = d.chunk = stringSupplant("#{user}#{slashListname}", d);
             d.list = twttr.txt.htmlEscape(list.toLowerCase());
-            return stringSupplant("#{before}#{at}<a class=\"#{urlClass} #{listClass}\" href=\"#{listUrlBase}#{list}\"#{extraHtml} target=\"_blank\">#{preChunk}#{chunk}#{postChunk}</a>", d);
+            return stringSupplant("#{before}#{at}<a class=\"#{urlClass} #{listClass}\" href=\"#{listUrlBase}#{list}\"#{extraHtml}>#{chunk}</a>", d);
           } else {
             if (after && after.match(twttr.txt.regexen.endScreenNameMatch)) {
               // Followed by something that means we don't autolink
@@ -385,7 +546,7 @@ if (!window.twttr) {
               // this is a screen name
               d.chunk = twttr.txt.htmlEscape(user);
               d.dataScreenName = !options.suppressDataScreenName ? stringSupplant("data-screen-name=\"#{chunk}\" ", d) : "";
-              return stringSupplant("#{before}#{at}<a class=\"#{urlClass} #{usernameClass}\" #{dataScreenName}href=\"#{usernameUrlBase}#{chunk}\"#{extraHtml} target=\"_blank\">#{preChunk}#{chunk}#{postChunk}</a>", d);
+              return stringSupplant("#{before}#{at}<a class=\"#{urlClass} #{usernameClass}\" #{dataScreenName}href=\"#{usernameUrlBase}#{chunk}\"#{extraHtml}>#{preChunk}#{chunk}#{postChunk}</a>", d);
             }
           }
         });
@@ -404,11 +565,7 @@ if (!window.twttr) {
       var extraHtml = HTML_ATTR_NO_FOLLOW;
     }
 
-    return text.replace(twttr.txt.regexen.autoLinkHashtags, function(match, before, hash, text, offset, chunk) {
-      var after = chunk.slice(offset + match.length);
-      if (after.match(twttr.txt.regexen.endHashtagMatch))
-        return match;
-
+    return text.replace(twttr.txt.regexen.autoLinkHashtags, function(match, before, hash, text) {
       var d = {
         before: before,
         hash: twttr.txt.htmlEscape(hash),
@@ -424,7 +581,7 @@ if (!window.twttr) {
         }
       }
 
-      return stringSupplant("#{before}<a href=\"#{hashtagUrlBase}#{text}\" title=\"##{text}\" class=\"#{urlClass} #{hashtagClass}\"#{extraHtml} target=\"_blank\">#{hash}#{preText}#{text}#{postText}</a>", d);
+      return stringSupplant("#{before}<a href=\"#{hashtagUrlBase}#{text}\" title=\"##{text}\" class=\"#{urlClass} #{hashtagClass}\"#{extraHtml}>#{hash}#{preText}#{text}#{postText}</a>", d);
     });
   };
 
@@ -439,23 +596,10 @@ if (!window.twttr) {
       delete options.urlClass;
     }
 
-    // remap url entities to hash
-    var urlEntities, i, len;
-    if(options.urlEntities) {
-      urlEntities = {};
-      for(i = 0, len = options.urlEntities.length; i < len; i++) {
-        urlEntities[options.urlEntities[i].url] = options.urlEntities[i];
-      }
-    }
-
     delete options.suppressNoFollow;
     delete options.suppressDataScreenName;
-    delete options.listClass;
-    delete options.usernameClass;
-    delete options.usernameUrlBase;
-    delete options.listUrlBase;
 
-    return text.replace(twttr.txt.regexen.extractUrl, function(match, all, before, url, protocol, port, domain, path, queryString) {
+    return text.replace(twttr.txt.regexen.extractUrl, function(match, all, before, url, protocol, domain, path, queryString) {
       var tldComponents;
 
       if (protocol) {
@@ -469,13 +613,8 @@ if (!window.twttr) {
           htmlAttrs: htmlAttrs,
           url: twttr.txt.htmlEscape(url)
         };
-        if (urlEntities && urlEntities[url] && urlEntities[url].display_url) {
-          d.displayUrl = twttr.txt.htmlEscape(urlEntities[url].display_url);
-        } else {
-          d.displayUrl = d.url;
-        }
 
-        return stringSupplant("#{before}<a href=\"#{url}\"#{htmlAttrs} target=\"_blank\">#{displayUrl}</a>", d);
+        return stringSupplant("#{before}<a href=\"#{url}\"#{htmlAttrs}>#{url}</a>", d);
       } else {
         return all;
       }
@@ -502,8 +641,7 @@ if (!window.twttr) {
     var possibleScreenNames = [],
         position = 0;
 
-    text.replace(twttr.txt.regexen.extractMentions, function(match, before, atSign, screenName, offset, chunk) {
-      var after = chunk.slice(offset + match.length);
+    text.replace(twttr.txt.regexen.extractMentions, function(match, before, atSign, screenName, after) {
       if (!after.match(twttr.txt.regexen.endScreenNameMatch)) {
         var startPosition = text.indexOf(atSign + screenName, position);
         position = startPosition + screenName.length + 1;
@@ -517,44 +655,13 @@ if (!window.twttr) {
     return possibleScreenNames;
   };
 
-  /**
-   * Extract list or user mentions.
-   * (Presence of listSlug indicates a list)
-   */
-  twttr.txt.extractMentionsOrListsWithIndices = function(text) {
-    if (!text) {
-      return [];
-    }
-
-    var possibleNames = [],
-        position = 0;
-
-    text.replace(twttr.txt.regexen.extractMentionsOrLists, function(match, before, atSign, screenName, slashListname, offset, chunk) {
-      var after = chunk.slice(offset + match.length);
-      if (!after.match(twttr.txt.regexen.endScreenNameMatch)) {
-        slashListname = slashListname || '';
-        var startPosition = text.indexOf(atSign + screenName + slashListname, position);
-        position = startPosition + screenName.length + slashListname.length + 1;
-        possibleNames.push({
-          screenName: screenName,
-          listSlug: slashListname,
-          indices: [startPosition, position]
-        });
-      }
-    });
-
-    return possibleNames;
-  };
-
-
   twttr.txt.extractReplies = function(text) {
     if (!text) {
       return null;
     }
 
     var possibleScreenName = text.match(twttr.txt.regexen.extractReply);
-    if (!possibleScreenName ||
-        RegExp.rightContext.match(twttr.txt.regexen.endScreenNameMatch)) {
+    if (!possibleScreenName) {
       return null;
     }
 
@@ -580,49 +687,16 @@ if (!window.twttr) {
     var urls = [],
         position = 0;
 
-    text.replace(twttr.txt.regexen.extractUrl, function(match, all, before, url, protocol, domain, port, path, query) {
-      var startPosition = text.indexOf(url, position),
-          endPosition = startPosition + url.length;
+    text.replace(twttr.txt.regexen.extractUrl, function(match, all, before, url, protocol, domain, path, query) {
+      var tldComponents;
 
-      // if protocol is missing and domain contains non-ASCII characters,
-      // extract ASCII-only domains.
-      if (!protocol) {
-        var lastUrl,
-            lastUrlInvalidMatch = false,
-            asciiEndPosition = 0;
-        domain.replace(twttr.txt.regexen.validAsciiDomain, function(asciiDomain) {
-          var asciiStartPosition = domain.indexOf(asciiDomain, asciiEndPosition);
-          asciiEndPosition = asciiStartPosition + asciiDomain.length
-          lastUrl = {
-            url: asciiDomain,
-            indices: [startPosition + asciiStartPosition, startPosition + asciiEndPosition]
-          }
-          lastUrlInvalidMatch = asciiDomain.match(twttr.txt.regexen.invalidShortDomain);
-          if (!lastUrlInvalidMatch) {
-            urls.push(lastUrl);
-          }
-        });
+      if (protocol) {
+        var startPosition = text.indexOf(url, position),
+            position = startPosition + url.length;
 
-        if (urls.length == 0) {
-          return;
-        }
-
-        if (path) {
-          if (lastUrlInvalidMatch) {
-            urls.push(lastUrl);
-          }
-          lastUrl.url = url.replace(domain, lastUrl.url);
-          lastUrl.indices[1] = endPosition;
-        }
-      } else {
-        // In the case of t.co URLs, don't allow additional path characters.
-        if (url.match(twttr.txt.regexen.validTcoUrl)) {
-          url = RegExp.lastMatch;
-          endPosition = startPosition + url.length;
-        }
         urls.push({
           url: url,
-          indices: [startPosition, endPosition]
+          indices: [startPosition, position]
         });
       }
     });
@@ -649,10 +723,7 @@ if (!window.twttr) {
     var tags = [],
         position = 0;
 
-    text.replace(twttr.txt.regexen.autoLinkHashtags, function(match, before, hash, hashText, offset, chunk) {
-      var after = chunk.slice(offset + match.length);
-      if (after.match(twttr.txt.regexen.endHashtagMatch))
-        return;
+    text.replace(twttr.txt.regexen.autoLinkHashtags, function(match, before, hash, hashText) {
       var startPosition = text.indexOf(hash + hashText, position);
       position = startPosition + hashText.length + 1;
       tags.push({
@@ -819,7 +890,7 @@ if (!window.twttr) {
       }
     }
 
-    return false;
+    return false
   };
 
   twttr.txt.isValidTweetText = function(text) {
@@ -857,13 +928,9 @@ if (!window.twttr) {
     return extracted.length === 1 && extracted[0] === hashtag.slice(1);
   };
 
-  twttr.txt.isValidUrl = function(url, unicodeDomains, requireProtocol) {
+  twttr.txt.isValidUrl = function(url, unicodeDomains) {
     if (unicodeDomains == null) {
       unicodeDomains = true;
-    }
-
-    if (requireProtocol == null) {
-      requireProtocol = true;
     }
 
     if (!url) {
@@ -883,7 +950,7 @@ if (!window.twttr) {
         fragment = urlParts[5];
 
     if (!(
-      (!requireProtocol || (isValidMatch(scheme, twttr.txt.regexen.validateUrlScheme) && scheme.match(/^https?$/i))) &&
+      isValidMatch(scheme, twttr.txt.regexen.validateUrlScheme) && scheme.match(/^https?$/i) &&
       isValidMatch(path, twttr.txt.regexen.validateUrlPath) &&
       isValidMatch(query, twttr.txt.regexen.validateUrlQuery, true) &&
       isValidMatch(fragment, twttr.txt.regexen.validateUrlFragment, true)
@@ -906,8 +973,5 @@ if (!window.twttr) {
     return (!string || (string.match(regex) && RegExp["$&"] === string));
   }
 
-  if (typeof module != 'undefined' && module.exports) {
-    module.exports = twttr.txt;
-  }
 
 }());

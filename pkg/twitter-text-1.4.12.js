@@ -1,3 +1,14 @@
+/*!
+ * twitter-text-js 1.4.12
+ *
+ * Copyright 2011 Twitter, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this work except in compliance with the License.
+ * You may obtain a copy of the License at:
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ */
 if (!window.twttr) {
   window.twttr = {};
 }
@@ -195,8 +206,6 @@ if (!window.twttr) {
     ')'
   , 'gi');
 
-  twttr.txt.regexen.validTcoUrl = /^https?:\/\/t\.co\/[a-z0-9]+/i;
-
   // These URL validation pattern strings are based on the ABNF from RFC 3986
   twttr.txt.regexen.validateUrlUnreserved = /[a-z0-9\-._~]/i;
   twttr.txt.regexen.validateUrlPctEncoded = /(?:%[0-9a-f]{2})/i;
@@ -317,16 +326,6 @@ if (!window.twttr) {
     options);
   };
 
-  twttr.txt.autoLinkWebIntents = function(text, options) {
-    options = clone(options || {});
-    options.usernameUrlBase = "https://twitter.com/intent/user?screen_name=";
-    return twttr.txt.autoLinkUsernamesOrLists(
-      twttr.txt.autoLinkUrlsCustom(
-        twttr.txt.autoLinkHashtags(text, options),
-      options),
-    options);
-  }
-
 
   twttr.txt.autoLinkUsernamesOrLists = function(text, options) {
     options = clone(options || {});
@@ -376,7 +375,7 @@ if (!window.twttr) {
             // the link is a list
             var list = d.chunk = stringSupplant("#{user}#{slashListname}", d);
             d.list = twttr.txt.htmlEscape(list.toLowerCase());
-            return stringSupplant("#{before}#{at}<a class=\"#{urlClass} #{listClass}\" href=\"#{listUrlBase}#{list}\"#{extraHtml} target=\"_blank\">#{preChunk}#{chunk}#{postChunk}</a>", d);
+            return stringSupplant("#{before}#{at}<a class=\"#{urlClass} #{listClass}\" href=\"#{listUrlBase}#{list}\"#{extraHtml}>#{preChunk}#{chunk}#{postChunk}</a>", d);
           } else {
             if (after && after.match(twttr.txt.regexen.endScreenNameMatch)) {
               // Followed by something that means we don't autolink
@@ -385,7 +384,7 @@ if (!window.twttr) {
               // this is a screen name
               d.chunk = twttr.txt.htmlEscape(user);
               d.dataScreenName = !options.suppressDataScreenName ? stringSupplant("data-screen-name=\"#{chunk}\" ", d) : "";
-              return stringSupplant("#{before}#{at}<a class=\"#{urlClass} #{usernameClass}\" #{dataScreenName}href=\"#{usernameUrlBase}#{chunk}\"#{extraHtml} target=\"_blank\">#{preChunk}#{chunk}#{postChunk}</a>", d);
+              return stringSupplant("#{before}#{at}<a class=\"#{urlClass} #{usernameClass}\" #{dataScreenName}href=\"#{usernameUrlBase}#{chunk}\"#{extraHtml}>#{preChunk}#{chunk}#{postChunk}</a>", d);
             }
           }
         });
@@ -424,7 +423,7 @@ if (!window.twttr) {
         }
       }
 
-      return stringSupplant("#{before}<a href=\"#{hashtagUrlBase}#{text}\" title=\"##{text}\" class=\"#{urlClass} #{hashtagClass}\"#{extraHtml} target=\"_blank\">#{hash}#{preText}#{text}#{postText}</a>", d);
+      return stringSupplant("#{before}<a href=\"#{hashtagUrlBase}#{text}\" title=\"##{text}\" class=\"#{urlClass} #{hashtagClass}\"#{extraHtml}>#{hash}#{preText}#{text}#{postText}</a>", d);
     });
   };
 
@@ -475,7 +474,7 @@ if (!window.twttr) {
           d.displayUrl = d.url;
         }
 
-        return stringSupplant("#{before}<a href=\"#{url}\"#{htmlAttrs} target=\"_blank\">#{displayUrl}</a>", d);
+        return stringSupplant("#{before}<a href=\"#{url}\"#{htmlAttrs}>#{displayUrl}</a>", d);
       } else {
         return all;
       }
@@ -615,11 +614,6 @@ if (!window.twttr) {
           lastUrl.indices[1] = endPosition;
         }
       } else {
-        // In the case of t.co URLs, don't allow additional path characters.
-        if (url.match(twttr.txt.regexen.validTcoUrl)) {
-          url = RegExp.lastMatch;
-          endPosition = startPosition + url.length;
-        }
         urls.push({
           url: url,
           indices: [startPosition, endPosition]
