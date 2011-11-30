@@ -260,6 +260,16 @@ if (!window.twttr) {
     options);
   };
 
+  twttr.txt.autoLinkWebIntents = function(text, options) {
+    options = clone(options || {});
+    options.usernameUrlBase = "https://twitter.com/intent/user?screen_name=";
+    return twttr.txt.autoLinkUsernamesOrLists(
+      twttr.txt.autoLinkUrlsCustom(
+        twttr.txt.autoLinkHashtags(text, options),
+      options),
+    options);
+  }
+
 
   twttr.txt.autoLinkUsernamesOrLists = function(text, options) {
     options = clone(options || {});
@@ -309,7 +319,7 @@ if (!window.twttr) {
             // the link is a list
             var list = d.chunk = stringSupplant("#{user}#{slashListname}", d);
             d.list = twttr.txt.htmlEscape(list.toLowerCase());
-            return stringSupplant("#{before}#{at}<a class=\"#{urlClass} #{listClass}\" href=\"#{listUrlBase}#{list}\"#{extraHtml}>#{chunk}</a>", d);
+            return stringSupplant("#{before}#{at}<a class=\"#{urlClass} #{listClass}\" href=\"#{listUrlBase}#{list}\"#{extraHtml} target=\"_blank\">#{chunk}</a>", d);
           } else {
             if (after && after.match(twttr.txt.regexen.endScreenNameMatch)) {
               // Followed by something that means we don't autolink
@@ -318,7 +328,7 @@ if (!window.twttr) {
               // this is a screen name
               d.chunk = twttr.txt.htmlEscape(user);
               d.dataScreenName = !options.suppressDataScreenName ? stringSupplant("data-screen-name=\"#{chunk}\" ", d) : "";
-              return stringSupplant("#{before}#{at}<a class=\"#{urlClass} #{usernameClass}\" #{dataScreenName}href=\"#{usernameUrlBase}#{chunk}\"#{extraHtml}>#{preChunk}#{chunk}#{postChunk}</a>", d);
+              return stringSupplant("#{before}#{at}<a class=\"#{urlClass} #{usernameClass}\" #{dataScreenName}href=\"#{usernameUrlBase}#{chunk}\"#{extraHtml} target=\"_blank\">#{preChunk}#{chunk}#{postChunk}</a>", d);
             }
           }
         });
@@ -353,7 +363,7 @@ if (!window.twttr) {
         }
       }
 
-      return stringSupplant("#{before}<a href=\"#{hashtagUrlBase}#{text}\" title=\"##{text}\" class=\"#{urlClass} #{hashtagClass}\"#{extraHtml}>#{hash}#{preText}#{text}#{postText}</a>", d);
+      return stringSupplant("#{before}<a href=\"#{hashtagUrlBase}#{text}\" title=\"##{text}\" class=\"#{urlClass} #{hashtagClass}\"#{extraHtml} target=\"_blank\">#{hash}#{preText}#{text}#{postText}</a>", d);
     });
   };
 
@@ -386,7 +396,7 @@ if (!window.twttr) {
           url: twttr.txt.htmlEscape(url)
         };
 
-        return stringSupplant("#{before}<a href=\"#{url}\"#{htmlAttrs}>#{url}</a>", d);
+        return stringSupplant("#{before}<a href=\"#{url}\"#{htmlAttrs} target=\"_blank\">#{url}</a>", d);
       } else {
         return all;
       }
