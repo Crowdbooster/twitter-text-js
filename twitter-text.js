@@ -433,8 +433,14 @@ if (typeof twttr === "undefined" || twttr === null) {
   twttr.txt.autoLinkWebIntents = function(text, options) {
     options = clone(options || {});
     options.usernameUrlBase = "https://twitter.com/intent/user?screen_name=";
-    return twttr.txt.autoLink(text, options);
+    return twttr.txt.autoLinkTargetBlank(text, options);
   };
+
+  twttr.txt.autoLinkTargetBlank = function(text, options) {
+    options = clone(options || {});
+    options.urlTarget = "_blank";
+    return twttr.txt.autoLink(text, options);
+  }
 
   twttr.txt.linkToTextWithSymbol = function(entity, symbol, text, attributes, options) {
     var taggedSymbol = options.symbolTag ? "<" + options.symbolTag + ">" + symbol + "</"+ options.symbolTag + ">" : symbol;
