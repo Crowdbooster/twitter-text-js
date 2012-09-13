@@ -430,6 +430,12 @@ if (typeof twttr === "undefined" || twttr === null) {
     return stringSupplant("<a#{attr}>#{text}</a>", d);
   };
 
+  twttr.txt.autoLinkWebIntents = function(text, options) {
+    options = clone(options || {});
+    options.usernameUrlBase = "https://twitter.com/intent/user?screen_name=";
+    return twttr.txt.autoLink(text, options);
+  };
+
   twttr.txt.linkToTextWithSymbol = function(entity, symbol, text, attributes, options) {
     var taggedSymbol = options.symbolTag ? "<" + options.symbolTag + ">" + symbol + "</"+ options.symbolTag + ">" : symbol;
     text = twttr.txt.htmlEscape(text);
