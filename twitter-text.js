@@ -447,6 +447,10 @@ if (typeof twttr === "undefined" || twttr === null) {
     text = twttr.txt.htmlEscape(text);
     var taggedText = options.textWithSymbolTag ? "<" + options.textWithSymbolTag + ">" + text + "</"+ options.textWithSymbolTag + ">" : text;
 
+    if (options.urlTarget) {
+      attributes.target = options.urlTarget;
+    }
+
     if (options.usernameIncludeSymbol || !symbol.match(twttr.txt.regexen.atSigns)) {
       return twttr.txt.linkToText(entity, taggedSymbol + taggedText, attributes, options);
     } else {
