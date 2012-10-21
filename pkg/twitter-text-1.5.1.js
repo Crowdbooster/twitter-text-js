@@ -1,3 +1,14 @@
+/*!
+ * twitter-text-js 1.5.1
+ *
+ * Copyright 2011 Twitter, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this work except in compliance with the License.
+ * You may obtain a copy of the License at:
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ */
 if (typeof window === "undefined" || window === null) {
   window = { twttr: {} };
 }
@@ -430,26 +441,10 @@ if (typeof twttr === "undefined" || twttr === null) {
     return stringSupplant("<a#{attr}>#{text}</a>", d);
   };
 
-  twttr.txt.autoLinkWebIntents = function(text, options) {
-    options = clone(options || {});
-    options.usernameUrlBase = "https://twitter.com/intent/user?screen_name=";
-    return twttr.txt.autoLinkTargetBlank(text, options);
-  };
-
-  twttr.txt.autoLinkTargetBlank = function(text, options) {
-    options = clone(options || {});
-    options.urlTarget = "_blank";
-    return twttr.txt.autoLink(text, options);
-  }
-
   twttr.txt.linkToTextWithSymbol = function(entity, symbol, text, attributes, options) {
     var taggedSymbol = options.symbolTag ? "<" + options.symbolTag + ">" + symbol + "</"+ options.symbolTag + ">" : symbol;
     text = twttr.txt.htmlEscape(text);
     var taggedText = options.textWithSymbolTag ? "<" + options.textWithSymbolTag + ">" + text + "</"+ options.textWithSymbolTag + ">" : text;
-
-    if (options.urlTarget) {
-      attributes.target = options.urlTarget;
-    }
 
     if (options.usernameIncludeSymbol || !symbol.match(twttr.txt.regexen.atSigns)) {
       return twttr.txt.linkToText(entity, taggedSymbol + taggedText, attributes, options);
